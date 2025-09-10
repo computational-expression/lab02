@@ -13,7 +13,7 @@ The Pico 2 W operates on **3.3 volts** of electricity and contains:
 - **Flash memory** to store your Python programs permanently
 - A **dual-core processor** running at 150MHz to execute your code
 
-When you write code to control an LED, you're actually telling the Pico to send a **3.3V electrical signal** through specific pins. LEDs (Light Emitting Diodes) work by allowing current to flow in one direction, converting electrical energy into light. The built-in LED on your Pico is connected to **GPIO pin 25** and can be controlled directly through MicroPython commands.
+When you write code to control an LED, you're actually telling the Pico to send a **3.3V electrical signal** through specific pins. LEDs (Light Emitting Diodes) work by allowing current to flow in one direction, converting electrical energy into light. The built-in LED on your Pico 2W can be controlled using the `"LED"` pin identifier through MicroPython commands.
 
 This direct hardware control is what makes microcontrollers different from regular computers - your code immediately affects the physical world through electricity and electronic components.
 
@@ -54,77 +54,40 @@ Before starting this lab, ensure you have:
 - Completed Lab 1 (Digital Sensor Simulation Dashboard) - understanding of Python variables, data types, arithmetic operations, string manipulation, and basic conditionals
 - VS Code installed and configured
 - Git set up for version control
-- Your Pico 2 W board and USB cable
-- Completed the VSCode & Git Setup Workshop from Week 1
+- Your Pico 2 W board and USB cable with **MicroPython already installed** (see `PICO_SETUP.md` if needed)
 
-## Getting Started: Clone and Setup
+## Getting Started
 
-### Step 1: Clone the Repository *(Every Lab)*
+### Step 1: Clone and Open Repository
 1. **Clone this repository** to your local machine:
    ```bash
    git clone [repository-url]
-   cd lab0X
+   cd lab02
    ```
-2. **Open the repository folder** in VS Code:
-   - File → Open Folder → Select the `lab0X` folder
-   - OR use: `code .` from the terminal inside the lab directory
+2. **Open in VS Code**:
+   ```bash
+   code .
+   ```
 
-### Step 2: Connect and Configure Your Pico *(Every Lab)*
-1. **Connect your Pico 2 W** via USB (no BOOTSEL needed after first setup)
-2. **Configure MicroPico for this project**:
-   - Open Command Palette (Ctrl/Cmd + Shift + P)
-   - Type "MicroPico: Configure Project" and select it
-   - Choose your connected Pico 2 W device from the list
-   - This creates/updates `.vscode/settings.json` in your current project
-3. **Verify setup**:
-   - You should see "MicroPico" in the bottom status bar
-   - Look for the Pico connection indicator
+### Step 2: Install MicroPico Extension (One-Time Setup)
+**If this is your first Pico lab:**
+1. **Open Extensions panel** (Ctrl/Cmd + Shift + X)
+2. **Search for "MicroPico"** and install **"MicroPico" by paulober**
+3. **Extension ID**: `paulober.pico-w-go`
 
-### One-Time Extension Setup *(First Lab Only)*
-**If this is your first Pico lab this semester:**
-1. **Install the MicroPico extension** for VS Code:
-   - Open VS Code Extensions panel (Ctrl/Cmd + Shift + X)
-   - Search for **"MicroPico"** 
-   - Install **"MicroPico"** by **paulober**
-   - **Extension ID**: `paulober.pico-w-go`
-   - **Important**: Look for the one with the Pico logo and "paulober" as the publisher
+### Step 3: Connect and Test Your Pico
+1. **Connect your Pico 2 W** via USB (normal connection)
+2. **Initialize project**: Press Ctrl/Cmd + Shift + P → "MicroPico: Initialize MicroPico"
+3. **Test the LED**: Open `led_test.py` and run it (Ctrl/Cmd + Shift + P → "MicroPico: Run current file")
+4. **Verify**: Green LED should blink and you should see terminal output
 
-2. **Alternative**: Install via Command Palette:
-   - Press Ctrl/Cmd + Shift + P
-   - Type "Extensions: Install Extensions"
-   - Search for "MicroPico" and install the one by paulober
+**✅ Success**: You should see "MicroPico" in the bottom status bar and a blinking green LED!
 
-## Quick Start: Test Your Pico Right Now!
+## Start Coding: Your First Hardware Program
 
 **From Lab 1 to Lab 2**: In Lab 1, you used `print()` to display sensor simulation results. Now in Lab 2, you'll use the same programming concepts to control actual hardware!
 
-Want to see your Pico in action immediately? Try this simple test:
-
-1. **Connect your Pico 2 W** to your computer via USB
-2. **Open VS Code** and make sure the MicroPico extension is installed
-3. **Copy and paste this code** into a new file or directly into the MicroPico terminal:
-
-```python
-from machine import Pin
-import time
-
-led = Pin(25, Pin.OUT)  # Built-in LED
-print("Hello from Pico 2 W!")
-
-# Blink 5 times
-for i in range(5):
-    led.on()
-    print("LED ON")
-    time.sleep(0.5)
-    led.off()
-    print("LED OFF")
-    time.sleep(0.5)
-
-print("Test complete!")
-```
-
-4. **Run the code** using **Ctrl+Shift+P** → "MicroPico: Run current file"
-5. **Watch your Pico's LED blink!** You're now controlling hardware with code!
+**Ready to code?** Open `light_controller.py` and start applying your Lab 1 Python skills to control real hardware!
 
 ## The Lab Challenge: Smart Light Controller v2.0
 
@@ -139,93 +102,39 @@ print("Test complete!")
 ### Phase 1: Development Environment Setup (20 minutes)
 *Complete this during the in-class session*
 
-**Your environment should now be ready from the Getting Started steps above. Let's test it:**
+**Your environment should now be ready from the Getting Started steps above. Let's verify:**
 
-1. **Verify your setup**:
-   - Open `light_controller.py` from your repository folder
-   - Make sure your Pico 2 W is connected and configured
-   - Check that VS Code shows "MicroPython (Raspberry Pi Pico)" in the status bar
+1. **Open `light_controller.py`** from your repository folder
+2. **Make sure your Pico 2 W is connected** and VS Code shows "MicroPico" in the status bar
+3. **Test with `led_test.py`**: Run it to verify the green LED blinks
 
-2. **Test with the quick start code**:
-   - Run the quick start test (from the section above) to verify everything works
-   - You should see both terminal output AND the LED blinking on your Pico
+## 💡 Troubleshooting
 
-### How to Run Your Code on the Pico 2 W
+**LED not working?** 
+- Make sure you use `Pin("LED", Pin.OUT)` (not Pin 25)
+- Run `led_test.py` to verify your Pico LED works
+- Look for the green LED on your Pico 2W board
 
-**Important**: Your code files stay in your GitHub repository folder. The MicroPico extension runs them directly on the Pico from there.
+**Connection issues?**
+- Open Command Palette (`Ctrl+Shift+P`) → "MicroPico: Connect"
+- Try "MicroPico: Disconnect" then "MicroPico: Connect"
+- Make sure you installed **MicroPico by paulober**
 
-**Method 1: Direct Run in VS Code (Recommended)**
-1. **Open** your `light_controller.py` file in VS Code (from your repo folder)
-2. **Make sure** your Pico 2 W is connected and configured
-3. **Press** `Ctrl+Shift+P` (or `Cmd+Shift+P` on Mac) to open Command Palette
-4. **Type** "MicroPico: Run current file" and select it
-5. **Watch** the output in VS Code terminal AND the LED on your Pico!
+**Need detailed setup help?** See `PICO_SETUP.md` for complete hardware and software setup instructions.
+
+---
+
+### How to Run Your Code
+
+**Simple Steps:**
+1. **Open** your `light_controller.py` file in VS Code
+2. **Press** `Ctrl+Shift+P` (or `Cmd+Shift+P` on Mac) to open Command Palette
+3. **Type** "MicroPico: Run current file" and select it
+4. **Watch** the output in VS Code terminal AND the LED on your Pico!
 
 **Alternative**: Click the ▶ button in the top-right corner when viewing .py files
 
-**Method 2: Terminal with mpremote (Command Line)**
-If you prefer the terminal, you can use `mpremote`:
-1. **Install mpremote**:
-   ```bash
-   pip install mpremote
-   ```
-2. **Run your file directly**:
-   ```bash
-   mpremote run light_controller.py
-   ```
-3. **Or connect and run interactively**:
-   ```bash
-   mpremote connect auto
-   # Then in the REPL:
-   exec(open('light_controller.py').read())
-   ```
-
-**Method 3: Terminal with ampy**
-Alternative command-line tool:
-1. **Install ampy**:
-   ```bash
-   pip install adafruit-ampy
-   ```
-2. **Find your Pico's port** (usually `/dev/ttyACM0` on Linux, `COM3` on Windows):
-   ```bash
-   # Linux/Mac
-   ls /dev/tty*
-   # Windows
-   mode
-   ```
-3. **Run your file**:
-   ```bash
-   ampy --port /dev/ttyACM0 run light_controller.py
-   ```
-
-**Method 4: VS Code Terminal Integration**
-1. **Open terminal in VS Code** (Terminal → New Terminal)
-2. **Use mpremote** from within VS Code:
-   ```bash
-   mpremote run light_controller.py
-   ```
-
-**Method 5: Run Selected Code in VS Code**
-1. **Select** a portion of your code (or all of it with Ctrl/Cmd+A)
-2. **Press** `Ctrl+Shift+P` and choose "MicroPico: Run selection/line"
-3. **Great for testing** small code snippets
-
-**Method 6: Interactive MicroPico Terminal**
-1. **Press** `Ctrl+Shift+P` and select "MicroPico: Connect"
-2. **Type** Python commands directly in the terminal
-3. **Or run** your file with: `exec(open('light_controller.py').read())`
-
-**File Storage Explained:**
-- ✅ **Your code stays in your GitHub repo folder** (where you can commit/push changes)
-- ✅ **All methods run files directly from your computer** to the Pico
-- ✅ **No need to manually copy files** to the Pico drive
-- ✅ **Version control works normally** with your repo files
-
-**Troubleshooting:**
-- If Pico doesn't appear: Unplug, hold BOOTSEL, plug back in
-- If extension not working: Make sure you installed **MicroPico by paulober** (not other MicroPython extensions)
-- If connection fails: Try "MicroPico: Configure Project" again
-- For terminal methods: Make sure your Pico is in normal mode (not BOOTSEL mode)
+**Your code files stay in your GitHub repository folder** - the MicroPico extension runs them directly on the Pico.
 
 ### Phase 2: Smart Light Control with Python Fundamentals (45 minutes)
 *Begin in class, complete outside of class*
@@ -302,7 +211,7 @@ Calculated Light Patterns:
   Total OFF Time: 2.0 seconds
   
 Physical LED Control:
-  Built-in LED Pin: 25
+  Built-in LED Pin: "LED"
   Current LED State: ON
   Hardware Status: Active
   Control Response: LED responding to program

@@ -9,8 +9,8 @@
 from machine import Pin
 import time
 
-# Set up the built-in LED (connected to GPIO pin 25)
-led = Pin(25, Pin.OUT)
+# Set up the built-in LED (try PIN "LED" for Pico 2W)
+led = Pin("LED", Pin.OUT)  # Use "LED" string instead of pin number
 
 print("===============================================")
 print("     SMART LIGHT CONTROLLER v2.0")
@@ -49,9 +49,8 @@ print("  Total ON Time:", total_on_time, "seconds")
 print("  Total OFF Time:", total_off_time, "seconds")
 print("  Duty Cycle:", int(duty_cycle), "%")  # Using int() and % like Lab 1
 
-# Physical LED Control - Using Lab 1 conditional skills!
 print("\nPhysical LED Control:")
-print("  Built-in LED Pin: 25")
+print("  Built-in LED Pin: \"LED\"")
 
 # Control the LED using conditionals (like Lab 1's sensor status logic)
 if led_state:  # Conditional statement like Lab 1!

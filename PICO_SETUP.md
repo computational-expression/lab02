@@ -1,53 +1,61 @@
-# VS Code + Pico 2 W Setup Instructions
+# Raspberry Pi Pico 2W Setup for CS100
 
-## Quick Reference for Students
+This setup guide has **2 main parts**:
+1. **Installing MicroPython firmware** on your Pico 2W 
+2. **Setting up VS Code with MicroPico extension** for development
 
-### First Time Setup
-1. **Clone this repo** and open the folder in VS Code
-2. **Install MicroPico extension** (`paulober.pico-w-go`)
-3. **Connect Pico 2 W** (hold BOOTSEL while plugging in USB)
-4. **Configure project**: Ctrl+Shift+P → "MicroPico: Configure Project"
+---
 
-### Running Your Code
-- **VS Code method**: Open `light_controller.py` → Ctrl+Shift+P → "MicroPico: Run current file"
-- **Alternative**: Click the ▶ button that appears in the top-right when viewing .py files
-- **Terminal method**: `mpremote run light_controller.py` (after `pip install mpremote`)
-- **Interactive**: Ctrl+Shift+P → "MicroPico: Connect"
+## Part 1: Install MicroPython on Your Pico 2W
 
-### Terminal Commands
+### Download MicroPython
+1. **Download the firmware**: Go to https://micropython.org/download/RPI_PICO2_W/
+2. **Download the latest .uf2 file** (e.g., `RPI_PICO2_W-20241025-v1.24.0.uf2`)
+
+### Flash the Firmware
+1. **Hold the BOOTSEL button** while plugging in the Pico — it mounts as `RPI-RP2`
+2. **Copy the downloaded .uf2 file** onto that drive
+3. **Wait ~5 seconds**, then unplug and replug without BOOTSEL
+4. It should now boot into MicroPython (not appear as RPI-RP2)
+
+### How to Verify MicroPython Installation
+**On macOS Terminal:**
 ```bash
-# Install command-line tools
-pip install mpremote
-pip install adafruit-ampy
-
-# Run file directly
-mpremote run light_controller.py
-
-# Connect interactively
-mpremote connect auto
-
-# Alternative with ampy (need to find port first)
-ampy --port /dev/ttyACM0 run light_controller.py
+ls /dev/tty.usb*
 ```
+You should see something like `/dev/tty.usbmodem14201`
 
-### File Organization
-- ✅ All your code stays in this GitHub repo folder
-- ✅ Edit files normally in VS Code
-- ✅ Commit and push to GitHub as usual
-- ✅ MicroPico extension handles running code on Pico
+**On Linux Terminal:**
+```bash
+ls /dev/ttyACM*
+```
+You should see something like `/dev/ttyACM0`
+
+**On Windows:**
+- Open Device Manager → Ports (COM & LPT)
+- Look for "USB Serial Device" (e.g., COM3)
+
+## Part 2: Set Up VS Code with MicroPico Extension
+
+### Install MicroPico Extension
+1. **Open VS Code Extensions panel** (Ctrl/Cmd + Shift + X)
+2. **Search for "MicroPico"**
+3. **Install "MicroPico" by paulober** (`paulober.pico-w-go`)
+4. **Important**: Make sure it's by "paulober" (not other MicroPython extensions)
+
+### Test Your Setup
+1. **Clone your lab repository** and open it in VS Code
+2. **Connect your Pico 2W** via USB (normal connection, no BOOTSEL)
+3. **Initialize MicroPico**: Press Ctrl/Cmd + Shift + P → "MicroPico: Initialize MicroPico"
+4. **Test the LED**: Open `led_test.py` and run it using Ctrl/Cmd + Shift + P → "MicroPico: Run current file"
+5. **Verify**: You should see the green LED on your Pico blink and terminal output
+
+### Success Indicators
+- ✅ Bottom status bar shows "MicroPico" with connection indicator
+- ✅ `led_test.py` runs and LED blinks green
+- ✅ Terminal shows LED control messages
 
 ### Troubleshooting
-- **Pico not detected**: Unplug, hold BOOTSEL, plug in again
-- **Extension not working**: Make sure it's **MicroPico by paulober** (not other MicroPython extensions)
-- **Connection issues**: Try "MicroPico: Configure Project" again
-
-### Quick Test
-Try this in the MicroPython terminal to test connection:
-```python
-from machine import Pin
-led = Pin(25, Pin.OUT)
-led.on()  # LED should turn on
-led.off() # LED should turn off
-```
-
-Your code files never need to leave this folder!
+- **"Disconnected" in VS Code**: Try "MicroPico: Connect" from Command Palette
+- **No LED blinking**: Make sure to use `Pin("LED", Pin.OUT)` for Pico 2W
+- **Extension not working**: Verify you installed **MicroPico by paulober**

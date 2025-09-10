@@ -9,8 +9,8 @@
 from machine import Pin
 import time
 
-# Set up the built-in LED (connected to GPIO pin 25)
-led = Pin(25, Pin.OUT)
+# Set up the built-in LED (use "LED" for Pico 2W compatibility)
+led = Pin("LED", Pin.OUT)
 
 print("===============================================")
 print("     SMART LIGHT CONTROLLER v2.0")
@@ -57,7 +57,7 @@ print("\nCalculated Light Patterns:")
 # TODO: Hardware LED Control - Apply Lab 1 conditional skills!
 # Control the actual LED using conditionals from Lab 1:
 print("\nPhysical LED Control:")
-print("  Built-in LED Pin: 25")
+print("  Built-in LED Pin: \"LED\"")
 
 # Example LED control using conditionals (like Lab 1's sensor status logic):
 # if led_state:  # This is a conditional statement like Lab 1!
