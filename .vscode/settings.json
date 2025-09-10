@@ -1,20 +1,26 @@
 {
-    "micropython.executeButton": [
+    "micropico.executeButton": [
         {
             "text": "▶",
-            "tooltip": "Run",
+            "tooltip": "Run current file on Pico",
             "alignment": "left",
-            "command": "micropython.run",
+            "command": "micropico.execute",
             "priority": 3.5
         }
     ],
-    "micropython.syncFolder": "",
-    "python.defaultInterpreterPath": "micropython",
+    "micropico.syncFolder": "",
+    "python.defaultInterpreterPath": "/usr/bin/python3",
     "python.linting.enabled": false,
-    "micropython.syncFileTypes": [
+    "micropico.syncFileTypes": [
         "py"
     ],
+    "micropico.openOnStart": true,
     "files.associations": {
         "*.py": "python"
+    },
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/*/**": true
     }
 }

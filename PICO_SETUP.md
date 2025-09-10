@@ -4,15 +4,15 @@
 
 ### First Time Setup
 1. **Clone this repo** and open the folder in VS Code
-2. **Install MicroPython extension** (official Raspberry Pi Foundation version)
+2. **Install MicroPico extension** (`paulober.pico-w-go`)
 3. **Connect Pico 2 W** (hold BOOTSEL while plugging in USB)
-4. **Configure project**: Ctrl+Shift+P → "MicroPython: Configure Project"
+4. **Configure project**: Ctrl+Shift+P → "MicroPico: Configure Project"
 
 ### Running Your Code
-- **VS Code method**: Open `light_controller.py` → Ctrl+Shift+P → "MicroPython: Run current file on device"
+- **VS Code method**: Open `light_controller.py` → Ctrl+Shift+P → "MicroPico: Run current file"
+- **Alternative**: Click the ▶ button that appears in the top-right when viewing .py files
 - **Terminal method**: `mpremote run light_controller.py` (after `pip install mpremote`)
-- **Interactive**: Ctrl+Shift+P → "MicroPython: Connect to device"
-- **Use the ▶ button** that appears in the top-right when viewing .py files
+- **Interactive**: Ctrl+Shift+P → "MicroPico: Connect"
 
 ### Terminal Commands
 ```bash
@@ -34,12 +34,12 @@ ampy --port /dev/ttyACM0 run light_controller.py
 - ✅ All your code stays in this GitHub repo folder
 - ✅ Edit files normally in VS Code
 - ✅ Commit and push to GitHub as usual
-- ✅ MicroPython extension handles running code on Pico
+- ✅ MicroPico extension handles running code on Pico
 
 ### Troubleshooting
 - **Pico not detected**: Unplug, hold BOOTSEL, plug in again
-- **Extension not working**: Make sure it's the official Raspberry Pi Foundation MicroPython extension
-- **Connection issues**: Try "MicroPython: Configure Project" again
+- **Extension not working**: Make sure it's **MicroPico by paulober** (not other MicroPython extensions)
+- **Connection issues**: Try "MicroPico: Configure Project" again
 
 ### Quick Test
 Try this in the MicroPython terminal to test connection:

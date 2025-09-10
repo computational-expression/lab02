@@ -71,21 +71,28 @@ Before starting this lab, ensure you have:
 
 ### Step 2: Connect and Configure Your Pico *(Every Lab)*
 1. **Connect your Pico 2 W** via USB (no BOOTSEL needed after first setup)
-2. **Configure MicroPython for this project**:
+2. **Configure MicroPico for this project**:
    - Open Command Palette (Ctrl/Cmd + Shift + P)
-   - Type "MicroPython: Configure Project" and select it
+   - Type "MicroPico: Configure Project" and select it
    - Choose your connected Pico 2 W device from the list
    - This creates/updates `.vscode/settings.json` in your current project
 3. **Verify setup**:
-   - You should see "MicroPython (Raspberry Pi Pico)" in the bottom status bar
+   - You should see "MicroPico" in the bottom status bar
+   - Look for the Pico connection indicator
 
 ### One-Time Extension Setup *(First Lab Only)*
 **If this is your first Pico lab this semester:**
-1. **Install the MicroPython extension** for VS Code:
+1. **Install the MicroPico extension** for VS Code:
    - Open VS Code Extensions panel (Ctrl/Cmd + Shift + X)
-   - Search for "MicroPython" 
-   - Install the official **"MicroPython"** extension by Raspberry Pi Foundation
-   - **Important**: Make sure it's the official one, not a third-party extension
+   - Search for **"MicroPico"** 
+   - Install **"MicroPico"** by **paulober**
+   - **Extension ID**: `paulober.pico-w-go`
+   - **Important**: Look for the one with the Pico logo and "paulober" as the publisher
+
+2. **Alternative**: Install via Command Palette:
+   - Press Ctrl/Cmd + Shift + P
+   - Type "Extensions: Install Extensions"
+   - Search for "MicroPico" and install the one by paulober
 
 ## Quick Start: Test Your Pico Right Now!
 
@@ -94,8 +101,8 @@ Before starting this lab, ensure you have:
 Want to see your Pico in action immediately? Try this simple test:
 
 1. **Connect your Pico 2 W** to your computer via USB
-2. **Open VS Code** and make sure the MicroPython extension is installed
-3. **Copy and paste this code** into a new file or directly into the MicroPython terminal:
+2. **Open VS Code** and make sure the MicroPico extension is installed
+3. **Copy and paste this code** into a new file or directly into the MicroPico terminal:
 
 ```python
 from machine import Pin
@@ -116,7 +123,7 @@ for i in range(5):
 print("Test complete!")
 ```
 
-4. **Run the code** using **Ctrl+Shift+P** → "MicroPython: Run current file on device"
+4. **Run the code** using **Ctrl+Shift+P** → "MicroPico: Run current file"
 5. **Watch your Pico's LED blink!** You're now controlling hardware with code!
 
 ## The Lab Challenge: Smart Light Controller v2.0
@@ -127,7 +134,7 @@ print("Test complete!")
 - Keep all your code files in the GitHub repository folder you cloned
 - The `light_controller.py` file is already provided as a starter
 - Your work stays in your local repo and gets committed/pushed to GitHub
-- The MicroPython extension runs files directly from your repo folder on the Pico
+- The MicroPico extension runs files directly from your repo folder on the Pico
 
 ### Phase 1: Development Environment Setup (20 minutes)
 *Complete this during the in-class session*
@@ -145,14 +152,16 @@ print("Test complete!")
 
 ### How to Run Your Code on the Pico 2 W
 
-**Important**: Your code files stay in your GitHub repository folder. The MicroPython extension runs them directly on the Pico from there.
+**Important**: Your code files stay in your GitHub repository folder. The MicroPico extension runs them directly on the Pico from there.
 
 **Method 1: Direct Run in VS Code (Recommended)**
 1. **Open** your `light_controller.py` file in VS Code (from your repo folder)
 2. **Make sure** your Pico 2 W is connected and configured
 3. **Press** `Ctrl+Shift+P` (or `Cmd+Shift+P` on Mac) to open Command Palette
-4. **Type** "MicroPython: Run current file on device" and select it
+4. **Type** "MicroPico: Run current file" and select it
 5. **Watch** the output in VS Code terminal AND the LED on your Pico!
+
+**Alternative**: Click the ▶ button in the top-right corner when viewing .py files
 
 **Method 2: Terminal with mpremote (Command Line)**
 If you prefer the terminal, you can use `mpremote`:
@@ -198,11 +207,11 @@ Alternative command-line tool:
 
 **Method 5: Run Selected Code in VS Code**
 1. **Select** a portion of your code (or all of it with Ctrl/Cmd+A)
-2. **Press** `Ctrl+Shift+P` and choose "MicroPython: Run selection/line on device"
+2. **Press** `Ctrl+Shift+P` and choose "MicroPico: Run selection/line"
 3. **Great for testing** small code snippets
 
-**Method 6: Interactive MicroPython Terminal**
-1. **Press** `Ctrl+Shift+P` and select "MicroPython: Connect to device"
+**Method 6: Interactive MicroPico Terminal**
+1. **Press** `Ctrl+Shift+P` and select "MicroPico: Connect"
 2. **Type** Python commands directly in the terminal
 3. **Or run** your file with: `exec(open('light_controller.py').read())`
 
@@ -214,8 +223,8 @@ Alternative command-line tool:
 
 **Troubleshooting:**
 - If Pico doesn't appear: Unplug, hold BOOTSEL, plug back in
-- If extension not working: Make sure you installed the official Raspberry Pi Foundation MicroPython extension
-- If connection fails: Try "MicroPython: Configure Project" again
+- If extension not working: Make sure you installed **MicroPico by paulober** (not other MicroPython extensions)
+- If connection fails: Try "MicroPico: Configure Project" again
 - For terminal methods: Make sure your Pico is in normal mode (not BOOTSEL mode)
 
 ### Phase 2: Smart Light Control with Python Fundamentals (45 minutes)
@@ -363,7 +372,7 @@ This lab will be evaluated based on the following criteria:
 **Quick Testing Steps:**
 1. Connect your Pico 2 W via USB
 2. Open `light_controller.py` in VS Code
-3. Press **Ctrl+Shift+P** and select "MicroPython: Run current file on device"
+3. Press **Ctrl+Shift+P** and select "MicroPico: Run current file"
 4. Watch the terminal output AND the LED on your Pico
 5. Modify variables in your code and run again to see different behaviors
 
