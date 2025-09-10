@@ -1,0 +1,20 @@
+{
+    "micropython.executeButton": [
+        {
+            "text": "▶",
+            "tooltip": "Run",
+            "alignment": "left",
+            "command": "micropython.run",
+            "priority": 3.5
+        }
+    ],
+    "micropython.syncFolder": "",
+    "python.defaultInterpreterPath": "micropython",
+    "python.linting.enabled": false,
+    "micropython.syncFileTypes": [
+        "py"
+    ],
+    "files.associations": {
+        "*.py": "python"
+    }
+}
