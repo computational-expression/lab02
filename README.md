@@ -59,41 +59,33 @@ Before starting this lab, ensure you have:
 
 ## Getting Started: Clone and Setup
 
-### Step 1: Clone the Repository
+### Step 1: Clone the Repository *(Every Lab)*
 1. **Clone this repository** to your local machine:
    ```bash
    git clone [repository-url]
-   cd lab02
+   cd lab0X
    ```
 2. **Open the repository folder** in VS Code:
-   - File → Open Folder → Select the `lab02` folder
-   - OR use: `code .` from the terminal inside the lab02 directory
+   - File → Open Folder → Select the `lab0X` folder
+   - OR use: `code .` from the terminal inside the lab directory
 
-**Note**: In Lab 1, we only needed Python and VS Code. Now in Lab 2, we add hardware!
+### Step 2: Connect and Configure Your Pico *(Every Lab)*
+1. **Connect your Pico 2 W** via USB (no BOOTSEL needed after first setup)
+2. **Configure MicroPython for this project**:
+   - Open Command Palette (Ctrl/Cmd + Shift + P)
+   - Type "MicroPython: Configure Project" and select it
+   - Choose your connected Pico 2 W device from the list
+   - This creates/updates `.vscode/settings.json` in your current project
+3. **Verify setup**:
+   - You should see "MicroPython (Raspberry Pi Pico)" in the bottom status bar
 
-### Step 2: Install MicroPython Extension
+### One-Time Extension Setup *(First Lab Only)*
+**If this is your first Pico lab this semester:**
 1. **Install the MicroPython extension** for VS Code:
    - Open VS Code Extensions panel (Ctrl/Cmd + Shift + X)
    - Search for "MicroPython" 
    - Install the official **"MicroPython"** extension by Raspberry Pi Foundation
    - **Important**: Make sure it's the official one, not a third-party extension
-
-### Step 3: Configure Your Workspace for Pico
-1. **Connect your Pico 2 W**:
-   - Hold the BOOTSEL button while plugging in the USB cable
-   - The Pico should appear as a removable drive named "RPI-RP2"
-
-2. **Configure MicroPython for this project**:
-   - Open Command Palette (Ctrl/Cmd + Shift + P)
-   - Type "MicroPython: Configure Project" and select it
-   - Choose your connected Pico 2 W device from the list
-   - This creates a `.vscode/settings.json` file in your project
-
-3. **Verify setup**:
-   - You should see "MicroPython (Raspberry Pi Pico)" in the bottom status bar
-   - The terminal should show it's connected to your Pico
-
-**Note**: Your program files stay in your GitHub repository folder. The MicroPython extension handles running them on the Pico.
 
 ## Quick Start: Test Your Pico Right Now!
 
