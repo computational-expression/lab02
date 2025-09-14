@@ -9,12 +9,12 @@
 from machine import Pin
 import time
 
-# Set up the built-in LED (try PIN "LED" for Pico 2W)
-led = Pin("LED", Pin.OUT)  # Use "LED" string instead of pin number
+# Set up the built-in LED (use PIN "LED" for Pico 2W)
+led = Pin("LED", Pin.OUT) 
 
 print("===============================================")
 print("     SMART LIGHT CONTROLLER v2.0")
-print("         Pico 2W IoT Device - Alex's Study")
+print("         Pico 2W IoT Device - Megan's Study")
 print("===============================================")
 
 # Light Configuration Variables - Using Lab 1 data types!
@@ -22,7 +22,7 @@ brightness_percent = 75      # int variable (like Lab 1's sensor readings)
 led_state = True            # bool variable (like Lab 1's status variables)
 blink_speed_seconds = 0.5   # float variable (like Lab 1's decimal measurements)
 blink_cycles = 4            # int variable (like Lab 1's count variables) - using 4 for pattern variety
-user_room_name = "Alex's Study"  # str variable (like Lab 1's device names)
+user_room_name = "Megan's Study"  # str variable (like Lab 1's device names)
 
 print("\nCurrent Light Settings:")
 print("  Brightness Level:", brightness_percent, "%")

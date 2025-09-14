@@ -1,0 +1,186 @@
+setup: |
+  echo "Setting up IoT Hardware Smart Light Controller Lab environment..."
+  echo "Done!"
+---
+
+# IoT Hardware Smart Light Controller Lab - Gatorgrade Configuration
+# Tests Python foundations applied to hardware control with Pico 2W
+# 
+# GRADING BREAKDOWN (3.0 points total):
+# • Automated Checks (24 checks = 2.0 points): Code structure, syntax, completion
+# • Manual Code Review (1.0 point): Hardware execution verification during lab session
+#   - Program runs without errors on Pico 2W (0.5 points)
+#   - LED control functions correctly (on/off/blink) (0.5 points)
+#
+# Partial credit: Automated = (checks passed ÷ 24) × 2.0 points
+
+# ============================================================================
+# PROGRAM STRUCTURE AND COMPLETION CHECKS (6 checks)
+# ============================================================================
+
+# Check that light_controller.py file exists and is properly structured
+- src/light_controller.py:
+    - description: Ensure that the light_controller.py file exists in the src/ directory
+      check: ConfirmFileExists
+    - description: Complete all TODOs, remove the TODO markers from light_controller.py
+      check: MatchFileFragment
+      options:
+        fragment: TODO
+        count: 0
+        exact: true
+    - description: Include appropriate single-line comments explaining hardware code sections
+      check: CountSingleLineComments
+      options:
+        language: "Python"
+        count: 6
+        exact: false
+    - description: Include multi-line comment (docstring) at the top
+      check: CountMultipleLineComments
+      options:
+        language: "Python"
+        count: 1
+        exact: false
+    - description: Use print() function for controller output
+      check: MatchFileFragment
+      options:
+        fragment: print(
+        count: 10
+        exact: false
+    - description: Have at least a minimum number of commits in repository
+      check: CountCommits
+      options:
+        count: 3
+
+# ============================================================================
+# HARDWARE CONTROL SETUP (3 checks)
+# ============================================================================
+
+# Check for MicroPython hardware control setup
+- src/light_controller.py:
+    - description: Import machine.Pin for hardware control
+      check: MatchFileFragment
+      options:
+        fragment: from machine import Pin
+        count: 1
+        exact: true
+    - description: Import time module for hardware timing
+      check: MatchFileFragment
+      options:
+        fragment: import time
+        count: 1
+        exact: true
+    - description: Configure LED pin using Pin("LED", Pin.OUT) for Pico 2W
+      check: MatchFileFragment
+      options:
+        fragment: Pin("LED", Pin.OUT)
+        count: 1
+        exact: true
+
+# ============================================================================
+# VARIABLE ASSIGNMENTS (5 checks)
+# ============================================================================
+
+# Check for required variables with meaningful values (not default 0/False)
+- src/light_controller.py:
+    - description: Create brightness_percent variable with meaningful integer value
+      check: MatchFileFragment
+      options:
+        fragment: brightness_percent =
+        count: 1
+        exact: false
+    - description: Create led_state variable with boolean value
+      check: MatchFileFragment
+      options:
+        fragment: led_state =
+        count: 1
+        exact: false
+    - description: Create blink_speed_seconds variable with float value
+      check: MatchFileFragment
+      options:
+        fragment: blink_speed_seconds =
+        count: 1
+        exact: false
+    - description: Create blink_cycles variable with integer value
+      check: MatchFileFragment
+      options:
+        fragment: blink_cycles =
+        count: 1
+        exact: false
+    - description: Create user_room_name variable with string value
+      check: MatchFileFragment
+      options:
+        fragment: user_room_name =
+        count: 1
+        exact: false
+
+# ============================================================================
+# CALCULATIONS AND LOGIC (4 checks)
+# ============================================================================
+
+# Check for arithmetic operations and conditional control
+- src/light_controller.py:
+    - description: Use multiplication (*) for brightness calculations
+      check: MatchFileFragment
+      options:
+        fragment: "*"
+        count: 1
+        exact: false
+    - description: Create brightness_value calculation
+      check: MatchFileFragment
+      options:
+        fragment: brightness_value
+        count: 1
+        exact: false
+    - description: Use if statement for LED state control
+      check: MatchFileFragment
+      options:
+        fragment: if led_state
+        count: 1
+        exact: false
+    - description: Use conditional for blink pattern control
+      check: MatchFileFragment
+      options:
+        fragment: if blink_cycles
+        count: 1
+        exact: false
+
+# ============================================================================
+# REFLECTION AND DOCUMENTATION (3 checks)
+# ============================================================================
+
+# Check reflection file
+- writing/reflection.md:
+    - description: Ensure that the reflection.md file exists in the writing/ directory
+      check: ConfirmFileExists
+    - description: Complete all TODOs, remove the TODO markers from reflection
+      check: MatchFileFragment
+      options:
+        fragment: TODO
+        count: 0
+        exact: true
+    - description: Write a minimum number of meaningful words in the reflection
+      check: CountFileWords
+      options:
+        count: 300
+        exact: false
+
+# ============================================================================
+# TEST FILE VERIFICATION (3 checks)
+# ============================================================================
+
+# Check that test file exists for hardware verification
+- src/led_test.py:
+    - description: Ensure that the led_test.py file exists in the src/ directory
+      check: ConfirmFileExists
+    - description: Use led.on() method in test file
+      check: MatchFileFragment
+      options:
+        fragment: led.on()
+        count: 1
+        exact: false
+    - description: Use led.off() method in test file
+      check: MatchFileFragment
+      options:
+        fragment: led.off()
+        count: 1
+        exact: false
