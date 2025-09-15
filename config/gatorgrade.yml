@@ -7,12 +7,12 @@ setup: |
 # Tests Python foundations applied to hardware control with Pico 2W
 # 
 # GRADING BREAKDOWN (3.0 points total):
-# • Automated Checks (21 checks = 2.0 points): Code structure, syntax, completion
+# • Automated Checks (22 checks = 2.0 points): Code structure, syntax, completion
 # • Manual Code Review (1.0 point): Hardware execution verification during lab session
 #   - Program runs without errors on Pico 2W (0.5 points)
 #   - LED control functions correctly (on/off/blink) (0.5 points)
 #
-# Partial credit: Automated = (checks passed ÷ 21) × 2.0 points
+# Partial credit: Automated = (checks passed ÷ 22) × 2.0 points
 
 # ============================================================================
 # PROGRAM STRUCTURE AND COMPLETION CHECKS (6 checks)
@@ -46,6 +46,12 @@ setup: |
         fragment: print(
         count: 10
         exact: false
+    - description: Do not use for loops (lab focuses on conditionals only)
+      check: MatchFileFragment
+      options:
+        fragment: "for "
+        count: 0
+        exact: true
 
 # ============================================================================
 # HARDWARE CONTROL SETUP (3 checks)

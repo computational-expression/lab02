@@ -20,16 +20,26 @@ led = Pin("LED", Pin.OUT)
 
 print("===============================================")
 print("     SMART LIGHT CONTROLLER v2.0")
-print("         Pico 2W IoT Device - [Your Room Name]")
+print("         Pico 2W IoT Device Setup")
 print("===============================================")
 
-# TODO 1: Create your light configuration variables
-# Create these variables with meaningful values:
-# brightness_percent (int): brightness level 0-100
-# led_state (bool): True for ON, False for OFF  
-# blink_speed_seconds (float): time between blinks
-# blink_cycles (int): number of times to blink
-# user_room_name (str): your name or room name
+print("\n🔧 LIGHT CONFIGURATION SETUP")
+print("Let's configure your smart light controller!")
+
+# TODO 1: Get light configuration from user
+# Use input() to collect these values from the user:
+# user_room_name = input("Enter your room name: ")
+# brightness_percent = int(input("Enter brightness level (0-100): "))
+# led_choice = input("Should LED start ON? (yes/no): ").lower()
+# led_state = True if led_choice == "yes" else False
+# blink_speed_seconds = float(input("Enter blink speed in seconds (e.g., 0.5): "))
+# blink_cycles = int(input("Enter number of blink cycles (1-5): "))
+
+# TODO 1a: After getting user input, display the personalized header
+# print(f"\n===============================================")
+# print(f"     SMART LIGHT CONTROLLER v2.0")
+# print(f"         Pico 2W IoT Device - {user_room_name}")
+# print(f"===============================================")
 
 print("\nCurrent Light Settings:")
 # TODO 2: Print your variable values
@@ -53,6 +63,9 @@ print("  Built-in LED Pin: \"LED\"")
 # Use multiple if statements to create blinking:
 # if blink_cycles >= 1: blink once
 # if blink_cycles >= 2: blink twice
+# if blink_cycles >= 3: blink three times
+# if blink_cycles >= 4: blink four times  
+# if blink_cycles >= 5: blink five times
 # etc.
 
 print("  Hardware Status: Ready")

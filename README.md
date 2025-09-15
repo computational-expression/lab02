@@ -86,30 +86,33 @@ You will use Python programming concepts to control actual hardware.
 
 ### Programming Requirements
 
-You will build a Smart Light Controller that demonstrates:
+You will build a Smart Light Controller by completing 6 TODOs that demonstrate:
 
-1. **Variables and Data Types**: Store light settings using:
-   - `int` variables for brightness levels and blink counts  
-   - `float` variables for timing measurements
-   - `str` variables for user/room names and status messages
-   - `bool` variables for LED state (True/False)
+**TODO 1: User Input Collection** - Get configuration from user:
+   - Room name (string)
+   - Brightness level 0-100 (integer)
+   - LED state yes/no (boolean)
+   - Blink speed in seconds (float)
+   - Number of blink cycles 1-5 (integer)
 
-2. **Arithmetic Operations**: Use calculations for:
-   - Convert brightness percentage to practical values
-   - Calculate total blink cycles and timing
-   - Determine timing intervals and performance metrics
+**TODO 2: Display Configuration** - Print all user settings with descriptive labels
 
-3. **String Operations**: Create professional output with:
-   - String concatenation for device IDs and status messages
-   - `.upper()` method for status displays
-   - String formatting for hardware reports
+**TODO 3: Calculations** - Create arithmetic operations:
+   - `brightness_value = brightness_percent * 255 / 100` (convert to hardware scale)
+   - `pattern_duration = blink_cycles * blink_speed_seconds * 2` (total time)
 
-4. **Conditionals**: Use `if` statements to control hardware:
-   - `if led_state:` to turn LED on or off
-   - `if blink_cycles >= 1:` to create simple blink patterns
-   - Multiple `if` statements for different LED behaviors
+**TODO 4: LED Control** - Use conditionals to control hardware:
+   - `if led_state:` turn LED on and print status
+   - `else:` turn LED off and print status
 
-**Note**: This lab uses only conditionals and basic statements (no loops) to focus on fundamental programming concepts we have been covering in class.
+**TODO 5: Blink Pattern** - Create blinking using multiple conditionals (**no loops!**):
+   - `if blink_cycles >= 1:` execute first blink
+   - `if blink_cycles >= 2:` execute second blink
+   - Continue up to 5 blinks using separate `if` statements
+
+**TODO 6: Performance Status** - Create and display system performance variables
+
+**Important**: This lab focuses on conditionals and user input. **For loops are not allowed** - use multiple `if` statements for blinking patterns.
 
 ### Expected Output
 
@@ -158,11 +161,11 @@ Hardware Activity:
 ### Technical Implementation (3.0 points)
 
 **Grading is based on GatorGrade automated checks:**
-- **21 automated checks = 2.0 points**
+- **22 automated checks = 2.0 points**
 - **Manual code review = 1.0 point** (hardware execution verification during lab session)
   - Program runs without errors on Pico 2W (0.5 points)
   - LED control functions correctly (on/off/blink) (0.5 points)
-- **Partial credit:** Automated score = (checks passed ÷ 21) × 2.0 points
+- **Partial credit:** Automated score = (checks passed ÷ 22) × 2.0 points
 
 *The automated checks verify all technical requirements including:*
 - *Program structure and completion (file exists, TODOs completed, comments)*
@@ -170,6 +173,7 @@ Hardware Activity:
 - *Variable assignments (all 5 required variables with appropriate types)*
 - *Calculations and logic (arithmetic operations, conditionals for LED control)*
 - *Reflection and documentation (reflection file completed)*
+- *Code restrictions (no for loops - lab focuses on conditionals only)*
 
 ### Code Quality and Style (1.0 point)  
 - **Descriptive variable names** for hardware control (0.3 pts)
