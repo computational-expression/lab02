@@ -5,18 +5,6 @@ setup: |
 
 # IoT Hardware Smart Light Controller Lab - Gatorgrade Configuration
 # Tests Python foundations applied to hardware control with Pico 2W
-# 
-# GRADING BREAKDOWN (3.0 points total):
-# • Automated Checks (22 checks = 2.0 points): Code structure, syntax, completion
-# • Manual Code Review (1.0 point): Hardware execution verification during lab session
-#   - Program runs without errors on Pico 2W (0.5 points)
-#   - LED control functions correctly (on/off/blink) (0.5 points)
-#
-# Partial credit: Automated = (checks passed ÷ 22) × 2.0 points
-
-# ============================================================================
-# REPOSITORY MANAGEMENT (1 check)
-# ============================================================================
 
 - description: Have at least a minimum number of commits in repository
   check: CountCommits
@@ -99,16 +87,22 @@ setup: |
         fragment: brightness_percent =
         count: 1
         exact: false
-    - description: Create led_state variable with boolean value
+    - description: Create led_state variable with boolean value False
       check: MatchFileFragment
       options:
-        fragment: led_state =
+        fragment: led_state = False
         count: 1
         exact: false
-    - description: Create blink_speed_seconds variable with float value
+    - description: Create led_state variable with boolean value False
       check: MatchFileFragment
       options:
-        fragment: blink_speed_seconds =
+        fragment: led_state = False
+        count: 1
+        exact: false
+    - description: Create condition that checks if led_choice equals yes
+      check: MatchFileFragment
+      options:
+        fragment: led_choice ==
         count: 1
         exact: false
     - description: Create blink_cycles variable with integer value
