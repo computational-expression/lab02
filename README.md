@@ -210,11 +210,11 @@ System Performance:
 ### Technical Implementation (3.0 points)
 
 **Grading is based on GatorGrade automated checks:**
-- **23 automated checks = 2.0 points**
+- **24 automated checks = 2.0 points**
 - **Manual code review = 1.0 point** (hardware execution verification during lab session)
   - Program runs without errors on Pico 2W (0.5 points)
   - LED control functions correctly (on/off/blink) (0.5 points)
-- **Partial credit:** Automated score = (checks passed ÷ 23) × 2.0 points
+- **Partial credit:** Automated score = (checks passed ÷ 24) × 2.0 points
 
 *The automated checks verify all technical requirements including:*
 - *Program structure and completion (file exists, TODOs completed, comments)*
