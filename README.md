@@ -1,5 +1,6 @@
 # Lab 2: IoT Hardware Introduction - Smart Light Controller
-**CMPSC 100: Computational Expression Fall 2025**
+
+In this lab, you will apply Python fundamentals (variables, data types, arithmetic, conditionals) to control actual hardware with the Raspberry Pi Pico 2 W. Specifically, you will create a **Smart Light Controller** that controls the built-in LED on your Pico 2 W and displays system information using your Python programming skills.
 
 ## Meet Your Raspberry Pi Pico 2 W
 
@@ -16,12 +17,6 @@ The Pico 2 W operates on **3.3 volts** of electricity and contains:
 When you write code to control an LED, you are actually telling the Pico to send a **3.3V electrical signal** through specific pins. LEDs (Light Emitting Diodes) work by allowing current to flow in one direction, converting electrical energy into light. The built-in LED on your Pico 2W can be controlled using the `"LED"` pin identifier through MicroPython commands.
 
 This direct hardware control is what makes microcontrollers different from regular computers - your code immediately affects the physical world through electricity and electronic components.
-
-## Overview
-
-Welcome to your introduction to physical computing and IoT hardware! You'll apply Python fundamentals (variables, data types, arithmetic, conditionals) to control actual hardware with the Raspberry Pi Pico 2 W.
-
-You will create a **Smart Light Controller** that controls the built-in LED on your Pico 2 W and displays system information using your Python programming skills.
 
 ## Learning Objectives
 
@@ -65,7 +60,7 @@ Before starting this lab, ensure you have:
 
 ## The Lab Challenge: Smart Light Controller
 
-You'll use Python programming concepts to control actual hardware.
+You will use Python programming concepts to control actual hardware.
 
 **Your Tasks:**
 - Edit `src/light_controller.py` to complete the smart light controller
@@ -114,7 +109,7 @@ You will build a Smart Light Controller that demonstrates:
    - `if blink_cycles >= 1:` to create simple blink patterns
    - Multiple `if` statements for different LED behaviors
 
-**Note**: This lab uses only conditionals and basic statements (no loops) to focus on fundamental programming concepts.
+**Note**: This lab uses only conditionals and basic statements (no loops) to focus on fundamental programming concepts we have been covering in class.
 
 ### Expected Output
 
@@ -158,33 +153,86 @@ Hardware Activity:
 ===============================================
 ```
 
-## Assessment
+## Assessment Criteria - Total: 4.5 Points
 
-### Smart Light Controller Functionality (60%)
-- **Python Fundamentals**: Proper use of variables, data types, arithmetic operations, and conditionals
-- **Hardware LED Control**: Built-in LED successfully controlled through code
-- **Light Pattern Processing**: All required calculations implemented
-- **Output Display**: Professional-looking formatted report
-- **Code Execution**: Program runs without errors on the Pico 2 W
+### Technical Implementation (3.0 points)
 
-### Code Quality (25%)
-- **Comments and Documentation**: Clear explanations of hardware control and calculations
-- **Variable Names**: Descriptive, professional naming
-- **Code Organization**: Logical structure
-- **Output Formatting**: Professional appearance
+**Grading is based on GatorGrade automated checks:**
+- **24 automated checks = 2.0 points**
+- **Manual code review = 1.0 point** (hardware execution verification during lab session)
+  - Program runs without errors on Pico 2W (0.5 points)
+  - LED control functions correctly (on/off/blink) (0.5 points)
+- **Partial credit:** Automated score = (checks passed ÷ 24) × 2.0 points
 
-### Reflection (15%)
-- **Thoughtful analysis** of learning experience in `writing/reflection.md`
+*The automated checks verify all technical requirements including:*
+- *Program structure and completion (file exists, TODOs completed, comments)*
+- *Hardware control setup (MicroPython imports, LED pin configuration)*
+- *Variable assignments (all 5 required variables with appropriate types)*
+- *Calculations and logic (arithmetic operations, conditionals for LED control)*
+- *Reflection and documentation (reflection file completed)*
+- *Test file verification (test file exists with LED control methods)*
 
-## Submission
+### Code Quality and Style (1.0 point)  
+- **Descriptive variable names** for hardware control (0.3 pts)
+- **Clean, readable code organization** (0.3 pts)
+- **Appropriate comments** explaining hardware logic (0.4 pts)
 
-1. **Complete your program** in `src/light_controller.py`
-2. **Write your reflection** in `writing/reflection.md`
-3. **Test your program** on the Pico 2 W - verify the LED responds to your code
-4. **Commit and push** your work to Git
+### Reflection and Engagement (0.5 points)
+- **Thoughtful reflection** on learning and IoT hardware concepts
 
-**Quick Testing:**
-1. Connect your Pico 2 W via USB
-2. Open `src/light_controller.py` in VS Code
-3. Press **Ctrl+Shift+P** → "MicroPico: Run current file"
-4. Watch the terminal output AND the LED on your Pico
+## Code Review (Separate Grading Component)
+
+**This is a separate grading component: 2.2 points per code review. Not part of the 4.5-point lab grade. See the syllabus for more details.**
+
+### Topics You May Need to Explain:
+- **Variable types and naming conventions** for hardware control (Python programming concepts)
+- **Arithmetic operations** used in LED calculations like brightness scaling, timing (Python programming concepts) 
+- **Conditional statements** for LED control logic and hardware behavior (Python programming concepts)
+- **Hardware control concepts** like pin configuration and MicroPython basics
+- **Program logic** and flow for IoT hardware control and LED patterns
+
+## Submission Instructions
+
+Submit to GitHub frequently! The version submitted last before the due date will be the one that is graded. 
+
+### Git Workflow
+
+```bash
+# Add your completed files (can also use `git add .`)
+git add src/light_controller.py writing/reflection.md
+```
+
+```bash
+# Commit with a descriptive message
+git commit -m "Complete smart light controller with LED hardware control"
+```
+
+```bash
+# Push to GitHub
+git push
+```
+
+### Verification
+- Go to your GitHub repository online
+- Verify your files show your latest changes
+- Check that GatorGrade passes (automated testing will run)
+- **Test your program on Pico 2W**: Ensure LED responds correctly to your code
+
+## Getting Help
+
+### During Lab
+- Ask TLs or instructor for help with specific questions or hardware issues
+- Work with classmates on understanding concepts (but write your own code)
+- Use the lab time to understand the hardware setup and get started with your program
+
+### Outside Lab  
+- Post questions in Discord
+- Attend [TL office hours](https://www.cis.allegheny.edu/teaching/technicalleaders/) and/or [instructor office hours](https://janyljumadinova.com/schedule/) to seek help outside of class
+- Review the slides for concept reinforcement
+
+### Resources
+- [Python Documentation](https://docs.python.org/3/)
+- [MicroPython Documentation](https://docs.micropython.org/)
+- Course slides: [Python Basics](https://computational-expression.github.io/course_information/week02/python_basics.html), [Types & Operations](https://computational-expression.github.io/course_information/week03/types_operations.html), [Conditionals](https://computational-expression.github.io/course_information/week03/conditionals.html)
+- [Pico Setup Instructions](https://github.com/computational-expression/pico_setup)
+- Examples from class activities
