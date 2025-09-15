@@ -7,12 +7,12 @@ setup: |
 # Tests Python foundations applied to hardware control with Pico 2W
 # 
 # GRADING BREAKDOWN (3.0 points total):
-# • Automated Checks (21 checks = 2.0 points): Code structure, syntax, completion
+# • Automated Checks (22 checks = 2.0 points): Code structure, syntax, completion
 # • Manual Code Review (1.0 point): Hardware execution verification during lab session
 #   - Program runs without errors on Pico 2W (0.5 points)
 #   - LED control functions correctly (on/off/blink) (0.5 points)
 #
-# Partial credit: Automated = (checks passed ÷ 21) × 2.0 points
+# Partial credit: Automated = (checks passed ÷ 22) × 2.0 points
 
 # ============================================================================
 # REPOSITORY MANAGEMENT (1 check)
@@ -125,7 +125,7 @@ setup: |
         exact: false
 
 # ============================================================================
-# CALCULATIONS AND LOGIC (4 checks)
+# CALCULATIONS AND LOGIC (5 checks)
 # ============================================================================
 
 # Check for arithmetic operations and conditional control
@@ -134,6 +134,12 @@ setup: |
       check: MatchFileFragment
       options:
         fragment: "*"
+        count: 1
+        exact: false
+    - description: Use division (/) for percentage calculations
+      check: MatchFileFragment
+      options:
+        fragment: "/"
         count: 1
         exact: false
     - description: Create brightness_value calculation

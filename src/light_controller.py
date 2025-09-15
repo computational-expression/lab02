@@ -1,6 +1,20 @@
 """
 Smart Light Controller - Lab 2
-CMPSC 100: Computational Expression
+CMPSC 100: Cprint("\nCalculated Light Patterns:")
+# TODO 3: Create and display calculations
+# Calculate brightness_value by converting brightness_percent (0-100) to 0-255 scale
+# Calculate pattern_duration = blink_cycles * blink_speed_seconds * 2
+# Print both calculated values with labels
+# Note: Brightness calculation is for learning - LED brightness doesn't actually change
+
+print("\nPhysical LED Control:")
+print("  Built-in LED Pin: \"LED\" (digital on/off)")
+
+# TODO 4: Control the LED with conditionals
+# Use if/else to control the LED based on led_state:
+# if led_state is True: set led.on() and print status with brightness_percent
+# if led_state is False: set led.off() and print status
+# Note: brightness_percent is for learning - LED is digital on/off onlyxpression
 
 This program controls the built-in LED on a Raspberry Pi Pico 2W using Python fundamentals:
 - Variables (int, float, str, bool) to store light settings
@@ -15,7 +29,7 @@ Your task: Complete the TODOs below to create a working smart light controller.
 from machine import Pin
 import time
 
-# Set up the built-in LED
+# Set up the built-in LED for digital control
 led = Pin("LED", Pin.OUT)
 
 print("===============================================")
@@ -52,21 +66,22 @@ print("\nCalculated Light Patterns:")
 # Print both calculated values with labels
 
 print("\nPhysical LED Control:")
-print("  Built-in LED Pin: \"LED\"")
+print("  Built-in LED Pin: \"LED\" (digital on/off)")
 
 # TODO 4: Control the LED with conditionals
 # Use if/else to control the LED based on led_state:
-# if led_state is True: turn LED on and print status
-# if led_state is False: turn LED off and print status
+# if led_state is True: set led.on() and print status with brightness_percent
+# if led_state is False: set led.off() and print status
+# Note: brightness_percent is for learning - LED is digital on/off only
 
 # TODO 5: Create simple blink pattern (no loops!)
 # Use multiple if statements to create blinking:
-# if blink_cycles >= 1: blink once
-# if blink_cycles >= 2: blink twice
-# if blink_cycles >= 3: blink three times
-# if blink_cycles >= 4: blink four times  
-# if blink_cycles >= 5: blink five times
-# etc.
+# if blink_cycles >= 1: led.on(), sleep, led.off(), sleep
+# if blink_cycles >= 2: led.on(), sleep, led.off(), sleep
+# if blink_cycles >= 3: led.on(), sleep, led.off(), sleep
+# if blink_cycles >= 4: led.on(), sleep, led.off(), sleep  
+# if blink_cycles >= 5: led.on(), sleep, led.off(), sleep
+# Return LED to configured state with: led.on() or led.off()
 
 print("  Hardware Status: Ready")
 

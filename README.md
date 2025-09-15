@@ -82,6 +82,45 @@ You will use Python programming concepts to control actual hardware.
 
 **Alternative**: Click the ▶ button in the top-right corner when viewing .py files
 
+## Understanding MicroPython Hardware Control
+
+Before diving into the programming tasks, let's understand the key hardware control statements you'll use:
+
+### Import Statements
+```python
+from machine import Pin  # Import Pin class for GPIO control
+import time             # Import time module for delays
+```
+
+- **`from machine import Pin`**: This imports the `Pin` class from MicroPython's `machine` module, which provides direct access to the Pico's GPIO (General Purpose Input/Output) pins
+- **`import time`**: This imports the `time` module, which provides timing functions like `sleep()` for creating delays
+
+### LED Setup
+```python
+led = Pin("LED", Pin.OUT)  # Configure built-in LED as output
+```
+
+- **`Pin("LED", Pin.OUT)`**: Creates a Pin object for the built-in LED
+  - `"LED"` identifies the built-in LED pin on the Pico 2W
+  - `Pin.OUT` configures it as an output pin (sends signals out, rather than reading them in)
+
+### LED Control Commands
+```python
+led.on()   # Turn LED on (sends 3.3V signal)
+led.off()  # Turn LED off (sends 0V signal)
+```
+
+- **`led.on()`**: Sends a HIGH signal (3.3V) to the LED pin, turning it on
+- **`led.off()`**: Sends a LOW signal (0V) to the LED pin, turning it off
+
+### Timing Control
+```python
+time.sleep(0.5)  # Pause execution for 0.5 seconds
+```
+
+- **`time.sleep(seconds)`**: Pauses program execution for the specified number of seconds
+- Essential for creating visible blink patterns and controlling timing
+
 ### Programming Requirements
 
 You will build a Smart Light Controller by completing TODOs that demonstrate:
