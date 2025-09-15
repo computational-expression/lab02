@@ -46,10 +46,6 @@ setup: |
         fragment: print(
         count: 10
         exact: false
-    - description: Have at least a minimum number of commits in repository
-      check: CountCommits
-      options:
-        count: 3
 
 # ============================================================================
 # HARDWARE CONTROL SETUP (3 checks)
@@ -163,3 +159,8 @@ setup: |
       options:
         count: 300
         exact: false
+
+- description: Have at least a minimum number of commits in repository
+  check: CountCommits
+  options:
+    count: 3
