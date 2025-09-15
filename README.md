@@ -53,10 +53,10 @@ Before starting this lab, ensure you have:
 ### Step 3: Connect and Test Your Pico
 1. **Connect your Pico 2 W** via USB (normal connection)
 2. **Initialize project**: Press Ctrl/Cmd + Shift + P → "MicroPico: Initialize MicroPico"
-3. **Test the LED**: Open `src/led_test.py` and run it (Ctrl/Cmd + Shift + P → "MicroPico: Run current file")
-4. **Verify**: Green LED should blink and you should see terminal output
+3. **Test the setup**: Run your `src/light_controller.py` file once you start working on it
+4. **Verify**: You should see "MicroPico" in the bottom status bar
 
-**✅ Success**: You should see "MicroPico" in the bottom status bar and a blinking green LED!
+**✅ Success**: You should see "MicroPico" in the bottom status bar once connected!
 
 ## The Lab Challenge: Smart Light Controller
 
@@ -70,7 +70,7 @@ You will use Python programming concepts to control actual hardware.
 
 1. **Open `src/light_controller.py`** from your repository folder
 2. **Make sure your Pico 2 W is connected** and VS Code shows "MicroPico" in the status bar
-3. **Test with `src/led_test.py`**: Run it to verify the green LED blinks
+3. **Start working on your code**: Complete the TODOs in the file to control the LED
 
 **If you need help with Pico setup**, ask a TL or see [pico_setup instructions](https://github.com/computational-expression/pico_setup).
 
@@ -158,11 +158,11 @@ Hardware Activity:
 ### Technical Implementation (3.0 points)
 
 **Grading is based on GatorGrade automated checks:**
-- **24 automated checks = 2.0 points**
+- **21 automated checks = 2.0 points**
 - **Manual code review = 1.0 point** (hardware execution verification during lab session)
   - Program runs without errors on Pico 2W (0.5 points)
   - LED control functions correctly (on/off/blink) (0.5 points)
-- **Partial credit:** Automated score = (checks passed ÷ 24) × 2.0 points
+- **Partial credit:** Automated score = (checks passed ÷ 21) × 2.0 points
 
 *The automated checks verify all technical requirements including:*
 - *Program structure and completion (file exists, TODOs completed, comments)*
@@ -170,7 +170,6 @@ Hardware Activity:
 - *Variable assignments (all 5 required variables with appropriate types)*
 - *Calculations and logic (arithmetic operations, conditionals for LED control)*
 - *Reflection and documentation (reflection file completed)*
-- *Test file verification (test file exists with LED control methods)*
 
 ### Code Quality and Style (1.0 point)  
 - **Descriptive variable names** for hardware control (0.3 pts)

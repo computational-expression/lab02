@@ -7,12 +7,12 @@ setup: |
 # Tests Python foundations applied to hardware control with Pico 2W
 # 
 # GRADING BREAKDOWN (3.0 points total):
-# • Automated Checks (24 checks = 2.0 points): Code structure, syntax, completion
+# • Automated Checks (21 checks = 2.0 points): Code structure, syntax, completion
 # • Manual Code Review (1.0 point): Hardware execution verification during lab session
 #   - Program runs without errors on Pico 2W (0.5 points)
 #   - LED control functions correctly (on/off/blink) (0.5 points)
 #
-# Partial credit: Automated = (checks passed ÷ 24) × 2.0 points
+# Partial credit: Automated = (checks passed ÷ 21) × 2.0 points
 
 # ============================================================================
 # PROGRAM STRUCTURE AND COMPLETION CHECKS (6 checks)
@@ -162,25 +162,4 @@ setup: |
       check: CountFileWords
       options:
         count: 300
-        exact: false
-
-# ============================================================================
-# TEST FILE VERIFICATION (3 checks)
-# ============================================================================
-
-# Check that test file exists for hardware verification
-- src/led_test.py:
-    - description: Ensure that the led_test.py file exists in the src/ directory
-      check: ConfirmFileExists
-    - description: Use led.on() method in test file
-      check: MatchFileFragment
-      options:
-        fragment: led.on()
-        count: 1
-        exact: false
-    - description: Use led.off() method in test file
-      check: MatchFileFragment
-      options:
-        fragment: led.off()
-        count: 1
         exact: false

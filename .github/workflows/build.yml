@@ -49,7 +49,6 @@ jobs:
           run: |
             cd src
             python3 -m py_compile light_controller.py
-            python3 -m py_compile led_test.py
         # Run GatorGrader: see config/gatorgrade.yml
         - name: Run GatorGrader with GatorGrade
           if: always()
