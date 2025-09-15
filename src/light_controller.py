@@ -6,16 +6,16 @@ This program controls the built-in LED on a Raspberry Pi Pico 2W using Python fu
 - Variables (int, float, str, bool) to store light settings
 - Arithmetic operations to calculate light patterns  
 - Conditionals (if/else) to control LED behavior
-- String operations for professional output
+- String operations producing professional output
 
 Your task: Complete the TODOs below to create a working smart light controller.
 """
 
-# Import necessary modules for hardware control
+# Import necessary modules used in hardware control
 from machine import Pin
 import time
 
-# Set up the built-in LED for digital control
+# Set up the built-in LED used in digital control
 led = Pin("LED", Pin.OUT)
 
 print("===============================================")
@@ -46,7 +46,6 @@ print("\nCalculated Light Patterns:")
 # Calculate brightness_value by converting brightness_percent (0-100) to 0-255 scale
 # Calculate pattern_duration = blink_cycles * blink_speed_seconds * 2
 # Print both calculated values with labels
-# Note: Brightness calculation is for learning - LED brightness doesn't actually change
 
 print("\nPhysical LED Control:")
 print("  Built-in LED Pin: \"LED\" (digital on/off)")
@@ -55,7 +54,6 @@ print("  Built-in LED Pin: \"LED\" (digital on/off)")
 # Use if/else to control the LED based on led_state:
 # if led_state is True: set led.on() and print status with brightness_percent
 # if led_state is False: set led.off() and print status
-# Note: brightness_percent is for learning - LED is digital on/off only
 
 # TODO 5: Create simple blink pattern (no loops!)
 # Use multiple if statements to create blinking:
