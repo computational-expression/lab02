@@ -28,12 +28,14 @@ print("Let's configure your smart light controller!")
 
 # TODO 1: Get light configuration from user
 # Use input() to collect these values from the user:
-# user_room_name = input("Enter your room name: ")
-# brightness_percent = int(input("Enter brightness level (0-100): "))
-# led_choice = input("Should LED start ON? (yes/no): ").lower()
-# led_state = True if led_choice == "yes" else False
+# user_room_name
+# brightness_percent
+# led_choice
 # blink_speed_seconds = float(input("Enter blink speed in seconds (e.g., 0.5): "))
 # blink_cycles = int(input("Enter number of blink cycles (1-5): "))
+
+# TODO: Create a variable led_state and set it equal to False
+# Check if led_choice is equal to "yes" and if it is, set led_state variable equal to True
 
 # TODO 1a: After getting user input, display the personalized header that uses user_room_name
 
