@@ -25,7 +25,7 @@ setup: |
         fragment: TODO
         count: 0
         exact: true
-    - description: Include appropriate single-line comments in the program explaining hardware code sections
+    - description: Include appropriate single-line comments (at least 6) in the program explaining hardware code sections
       check: CountSingleLineComments
       options:
         language: "Python"
@@ -46,7 +46,7 @@ setup: |
     - description: Do not use for loops (lab focuses on conditionals only)
       check: MatchFileFragment
       options:
-        fragment: "for i in"
+        fragment: "for "
         count: 0
         exact: true
 
@@ -113,7 +113,7 @@ setup: |
         exact: false
 
 # ============================================================================
-# CALCULATIONS AND LOGIC (5 checks)
+# CALCULATIONS AND LOGIC (6 checks)
 # ============================================================================
 
 # Check for arithmetic operations and conditional control
