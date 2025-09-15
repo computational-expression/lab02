@@ -135,7 +135,7 @@ You will build a Smart Light Controller by completing TODOs that demonstrate:
 **TODO 2: Display Configuration** - Print all user settings with descriptive labels
 
 **TODO 3: Calculations** - Create arithmetic operations:
-   - `brightness_value = brightness_percent * 255 / 100` (convert to hardware scale)
+   - `brightness_value = ` # convert to percentage
    - `pattern_duration = blink_cycles * blink_speed_seconds * 2` (total time)
 
 **TODO 4: LED Control** - Use conditionals to control hardware:
@@ -147,7 +147,7 @@ You will build a Smart Light Controller by completing TODOs that demonstrate:
    - `if blink_cycles >= 2:` execute second blink
    - Continue up to 5 blinks using separate `if` statements
 
-**TODO 6: Performance Status** - Create and display system performance variables
+**TODO 6: Performance Status** - Create and display system performance variables based on your observation of the performance of your board
 
 **Important**: This lab focuses on conditionals and user input. **For loops are not allowed** - use multiple `if` statements for blinking patterns.
 
@@ -156,39 +156,51 @@ You will build a Smart Light Controller by completing TODOs that demonstrate:
 Your program should produce professional output similar to this:
 ```
 ===============================================
-     SMART LIGHT CONTROLLER v2.0
-         Pico 2W IoT Device - Jasmine's Room
+     SMART LIGHT CONTROLLER
+         Pico 2W IoT Device Setup
+===============================================
+LIGHT CONFIGURATION SETUP
+Let's configure your smart light controller!
+Enter your room name: JJ
+Enter brightness level (0-100): 50
+Should LED start ON? (yes/no): yes
+Enter blink speed in seconds (e.g., 0.5): 1
+Enter number of blink cycles (1-5): 3
+
+===============================================
+
+===============================================
+     SMART LIGHT CONTROLLER 
+         Pico 2W IoT Device - JJ
 ===============================================
 
 Current Light Settings:
-  Brightness Level: 75%
-  LED State: ON
-  Blink Speed: 0.5 seconds
-  Blink Cycles: 4
-  User/Room: Jasmine's Room
+  Brightness Level: 50 %
+  LED State: False
+  Blink Speed: 1.0 seconds
+  Blink Cycles: 3
+  User/Room: JJ
 
 Calculated Light Patterns:
-  Brightness Value: 191/255 (scaled)
-  Pattern Duration: 3.9 seconds
-  Total ON Time: 2.0 seconds
-  Total OFF Time: 2.0 seconds
-  
+  Brightness Value: 127 /255 (scaled)
+  Pattern Duration: 6.0 seconds
+
 Physical LED Control:
-  Built-in LED Pin: "LED"
-  Current LED State: ON
-  Hardware Status: Active
-  Control Response: LED responding to program
-  
+  Built-in LED Pin: "LED" (digital on/off)
+  Current LED State: OFF
+  LED Brightness: 0% (off)
+  Hardware Status: Standby
+  Note: LED brightness calculation teaches math - actual LED is digital only
+  Blink 1 completed
+  Blink 2 completed
+  Blink 3 completed
+  Hardware Status: Ready
+
 System Performance:
   Pattern Accuracy: 100%
   Hardware Response: Excellent
   Control Status: ACTIVE
   Timing Precision: 95%
-
-Hardware Activity:
-  - LED physically blinking in patterns
-  - Multiple conditional behaviors active
-  - Hardware control successful using conditionals
 
 ===============================================
 ```

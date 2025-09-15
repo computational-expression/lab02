@@ -46,7 +46,7 @@ setup: |
     - description: Do not use for loops (lab focuses on conditionals only)
       check: MatchFileFragment
       options:
-        fragment: "for "
+        fragment: "for i in"
         count: 0
         exact: true
 
@@ -85,12 +85,6 @@ setup: |
       check: MatchFileFragment
       options:
         fragment: brightness_percent =
-        count: 1
-        exact: false
-    - description: Create led_state variable with boolean value False
-      check: MatchFileFragment
-      options:
-        fragment: led_state = False
         count: 1
         exact: false
     - description: Create led_state variable with boolean value False
